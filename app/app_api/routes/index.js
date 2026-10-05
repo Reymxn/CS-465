@@ -8,4 +8,8 @@ router
   .route('/trips')
   .get(ctrlTrips.tripsList);
 
+router
+  .route('/trips/:tripCode')
+  .get(ctrlTrips.tripsFindByCode);
+
 module.exports = router;
