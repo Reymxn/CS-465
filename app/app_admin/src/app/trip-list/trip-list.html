@@ -1,0 +1,34 @@
+
+<div class="container mt-4">
+  <h1>Travlr Getaways - Trip Administration</h1>
+  <p>Manage your available travel packages.</p>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <p>
+    <strong>Trips loaded:</strong> {{ trips.length }}
+  </p>
+
+  <div *ngIf="!selectedTrip" class="row">
+    <div class="col-md-4 mb-4" *ngFor="let trip of trips">
+      <app-trip-card
+        [trip]="trip"
+        (editTrip)="editTrip($event)"
+      ></app-trip-card>
+    </div>
+  </div>
+
+  <div *ngIf="selectedTrip">
+    <app-trip-edit
+      [trip]="selectedTrip"
+      (tripSaved)="onTripSaved()"
+      (editCancelled)="cancelEdit()"
+    ></app-trip-edit>
+  </div>
+
+  <p *ngIf="trips.length === 0 && !errorMessage">
+    No trips available.
+  </p>
+</div>

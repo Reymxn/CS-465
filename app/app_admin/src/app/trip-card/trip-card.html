@@ -1,0 +1,44 @@
+
+<div class="card h-100 shadow-sm">
+  <img
+    [src]="'/images/' + trip.image"
+    class="card-img-top"
+    [alt]="trip.name"
+  >
+
+  <div class="card-body">
+    <h5 class="card-title">{{ trip.name }}</h5>
+
+    <p class="card-text">
+      <strong>Trip Code:</strong> {{ trip.code }}
+    </p>
+
+    <p class="card-text">
+      <strong>Resort:</strong> {{ trip.resort }}
+    </p>
+
+    <p class="card-text">
+      <strong>Duration:</strong> {{ trip.length }}
+    </p>
+
+    <p class="card-text">
+      <strong>Start Date:</strong> {{ trip.start }}
+    </p>
+
+    <p class="card-text">
+      <strong>Price Per Person:</strong> {{ trip.perPerson }}
+    </p>
+
+    <p class="card-text">
+      {{ trip.description }}
+    </p>
+
+    <button
+      type="button"
+      class="btn btn-primary mt-3"
+      (click)="onEdit()"
+    >
+      Edit Trip
+    </button>
+  </div>
+</div>
