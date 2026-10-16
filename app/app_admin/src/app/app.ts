@@ -1,11 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   standalone: false,
-  styleUrl: './app.css',
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('app_admin');
+  isLoggedIn = false;
+
+  constructor() {
+    this.isLoggedIn = !!sessionStorage.getItem('travlr_token');
+  }
+
+  logout(): void {
+    sessionStorage.removeItem('travlr_token');
+    this.isLoggedIn = false;
+  }
 }

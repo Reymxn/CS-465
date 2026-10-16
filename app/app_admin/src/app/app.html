@@ -1,11 +1,15 @@
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Travlr Getaways Admin</h1>
 
-<div class="app-container">
-  <header class="bg-dark text-white p-3">
-    <h2>Travlr Getaways</h2>
-    <p class="mb-0">Administration Dashboard</p>
-  </header>
+  <app-login *ngIf="!isLoggedIn"></app-login>
 
-  <main>
+  <div *ngIf="isLoggedIn">
+    <div class="text-end mb-3">
+      <button class="btn btn-danger" (click)="logout()">
+        Log Out
+      </button>
+    </div>
+
     <app-trip-list></app-trip-list>
-  </main>
+  </div>
 </div>

@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,21 +8,12 @@ import { App } from './app';
 import { TripList } from './trip-list/trip-list';
 import { TripCard } from './trip-card/trip-card';
 import { TripEdit } from './trip-edit/trip-edit';
+import { Login } from './login/login';
 
 @NgModule({
-  declarations: [
-    App,
-    TripList,
-    TripCard,
-    TripEdit
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  declarations: [App, TripList, TripCard, TripEdit, Login],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [App]
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
